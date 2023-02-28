@@ -1,3 +1,18 @@
+# frontend
+node_modules
+build
+*.log
+.yarn
+
+# backend
+# ...
+
+# deta
+.space
+
+
+### Defaults:
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
