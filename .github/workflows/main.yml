@@ -3,21 +3,19 @@ on:
   push:
     branches:
       - 'main'
-  workflow_dispatch:
 
 jobs:
-  push-to-space:
+  jerbear-push:
     runs-on: ubuntu-latest
     environment: "jerbear's Space"
-
+    if: contains(github.event.head_commit.message, '[jerbear]')
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v3
-
       - name: Push to Deta Space
         uses: neobrains/space-deployment-github-action@v0.3
         with:
           access_token: ${{ secrets.ACCESS_TOKEN }}
           project_id: ${{ secrets.PROJECT_ID }}
           space_push: true
+          space_release: ${{ contains(github.event.head_commit.message, '[release]') }}
