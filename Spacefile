@@ -2,9 +2,12 @@ v: 0
 app_name: Spacetime
 micros:
   - name: frontend
-    src: ./src/frontend
-    engine: jearbear put your engine here
     primary: true
+    src: ./src/frontend
+    engine: static
+    commands:
+      - npm run build
+    serve: build
 
   - name: backend
     src: ./src/backend
