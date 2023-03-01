@@ -6,7 +6,7 @@ micros:
     src: ./src/frontend
     engine: static
     commands:
-      - npm run build
+      - npm run detabuild
     serve: build
 
   - name: backend
